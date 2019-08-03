@@ -1,29 +1,12 @@
 # husky-crazy-edit
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+[demo查看](https://huskyareyouscared.github.io/husky-crazy-deit/dist/index.html)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### 目前实现的功能
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+  * 字体大小 
+  * 字体加粗 
+  * 斜体 
+  * 无序列表/有序列表 
+  * 字体背景色 
