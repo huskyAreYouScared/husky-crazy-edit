@@ -7,7 +7,9 @@
         <div class="right-container-tool">
           <toolbar></toolbar>
         </div>
-        <div class="right-container-write" ref="writeContainer" contenteditable="true"></div>
+        <div class="right-container-write" >
+          <div class="write-content" ref="writeContainer" contenteditable="true"></div>
+        </div>
       </div>
     </div>
     <div  class="tool-package" contenteditable="false"></div>
@@ -83,6 +85,12 @@ export default {
   font-family: 'serif';
   height:calc(100% - 70px);
   padding: 10px;
+  overflow-y: scroll;
+}
+.write-content{
+  width: 100%;
+  height: 50vh;
+  min-height: 100%;
 }
 .tool-package{
   width: 50px;
