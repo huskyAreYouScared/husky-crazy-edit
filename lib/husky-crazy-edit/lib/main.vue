@@ -8,11 +8,13 @@
           <toolbar></toolbar>
         </div>
         <div class="right-container-write" >
-          <div class="write-content" ref="writeContainer" contenteditable="true"></div>
+          <div class="write-content" ref="writeContainer" @keyup="getCurrentCotent" contenteditable="true"></div>
         </div>
       </div>
     </div>
-    <div  class="tool-package" contenteditable="false"></div>
+    <div  class="rach-border"  contenteditable="false">
+      <div class="rach-content" v-html="syncRachText"></div>
+    </div>
   </div>
 </template>
 
@@ -20,15 +22,14 @@
 import toolbar from './components/toolbar'
 export default {
   props: {
-    // 设置卡片标题
   },
   // import引入的组件需要注入到对象中才能使用
   components: {
     toolbar
   },
   data () {
-    // 这里存放数据
     return {
+      syncRachText: ''
     }
   },
   // 监听属性 类似于data概念
@@ -37,7 +38,9 @@ export default {
   watch: {},
   // 方法集合
   methods: {
-
+    getCurrentCotent () {
+      this.syncRachText = this.$refs.writeContainer.innerHTML
+    }
   },
   // 生命周期 - 挂载完成（可以访问DOM元素）
   mounted () {
@@ -85,21 +88,29 @@ export default {
   font-family: 'serif';
   height:calc(100% - 70px);
   padding: 10px;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 .write-content{
   width: 100%;
   height: 50vh;
   min-height: 100%;
 }
-.tool-package{
-  width: 50px;
-  height: 50px;
+.rach-border{
+  width: 100px;
+  height: 100%;
   position: absolute;
-  right: 50px;
+  right: 0px;
   top: 50px;
-  border: #ccc dashed 2px;
   cursor: pointer;
+  overflow: hidden;
 }
-
+.rach-content{
+  width: 100%;
+  height: auto;
+  color: #fff;
+  /* transform: scale(0.5); */
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
 </style>
