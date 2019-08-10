@@ -12,9 +12,6 @@
         </div>
       </div>
     </div>
-    <div  class="rach-border"  contenteditable="false">
-      <div class="rach-content" v-html="syncRachText"></div>
-    </div>
   </div>
 </template>
 
@@ -95,22 +92,5 @@ export default {
   height: 50vh;
   min-height: 100%;
 }
-.rach-border{
-  width: 100px;
-  height: 100%;
-  position: absolute;
-  right: 0px;
-  top: 50px;
-  cursor: pointer;
-  overflow: hidden;
-}
-.rach-content{
-  width: 100%;
-  height: auto;
-  color: #fff;
-  /* transform: scale(0.5); */
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
+
 </style>
